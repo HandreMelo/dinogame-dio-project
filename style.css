@@ -1,0 +1,68 @@
+body {
+    display: block;
+    background: #fafafa;
+}
+header,footer,.gameOver,.scoreDisplay {
+    font-family: 'Press Start 2P', cursive;
+    color: #666666;
+}
+header,footer {
+    background-color: #AAAAAA;
+    color: #ffffff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+footer {
+    bottom: 0;
+}
+.ring {
+    width: 30;
+    height: 30;
+}
+.dino {
+    position: absolute;
+    width: 52px;
+    height: 60px;
+    background-image: url(img/sonic-run2.gif);
+    bottom: 0;
+}
+
+.gameOver {
+    text-align: center;
+    padding-bottom: 120px;
+}
+.scoreDisplay {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.cactus {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    bottom: 0;
+    background-image: url(img/cactus.png);
+}
+
+/*animação*/
+
+@keyframes slideright {
+    from {
+        background-position: 7000%;
+    }
+    to {
+        background-position: 0;
+    }
+}
+
+.background {
+    position: absolute;
+    bottom: 50%;
+    background-image: url(img/background.png);
+    background-repeat: repeat-x;
+    animation: slideright 800s linear;
+    animation-iteration-count: infinite;
+    width: 100%;
+    height: 200px;
+}
