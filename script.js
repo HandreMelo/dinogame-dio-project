@@ -83,7 +83,8 @@ function gameOverDisplay() {
     background.appendChild(gameOverMsg);
     background.appendChild(pressSpaceMsg);
     if (hiscoreCache == 'defaultValue' || parseInt(hiscoreCache) < actualScore) {
-		var hi = actualScore+1;
+	var hi = actualScore;
+	hi+=1; //Algo está mantendo a pontuação do hiscore 1 abaixo do que deveria
         hiscore.innerText = hi;
         localStorage['hiscore'] = hi.toString();
     }
