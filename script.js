@@ -75,19 +75,17 @@ function getRandomInt(min, max) {
 function gameOverDisplay() {
     const gameOverMsg = document.createElement('h1');
     const pressSpaceMsg = document.createElement('h2');
+	
     gameOverMsg.classList.add('gameOver'); //adicionar classe
     gameOverMsg.innerHTML = 'Game Over :(';
     pressSpaceMsg.classList.add('gameOver')
     pressSpaceMsg.innerHTML = 'Press Enter To Reload'
     background.appendChild(gameOverMsg);
     background.appendChild(pressSpaceMsg);
-    if (hiscoreCache == 'defaultValue') {
-        hiscore.innerText = actualScore;
-        localStorage['hiscore'] = actualScore.toString();
-    }
-    else if (parseInt(hiscoreCache) < actualScore) {
-        hiscore.innerText = actualScore;
-        localStorage['hiscore'] = actualScore.toString();
+    if (hiscoreCache == 'defaultValue' || parseInt(hiscoreCache) < actualScore) {
+		var hi = actualScore+1;
+        hiscore.innerText = hi;
+        localStorage['hiscore'] = hi.toString();
     }
 }
 
